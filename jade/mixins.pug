@@ -1,0 +1,159 @@
+mixin dev_head(page_title)
+    head
+        title=page_title
+        | <!-- saved from url=(0014)about:internet -->
+        meta(charset='utf-8')
+        meta(name='viewport', content="width=device-width, initial-scale=1.0")
+        meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
+        meta(name="apple-mobile-web-app-capable", content="yes")
+        meta(name="format-detection", content="telephone=no")
+        //-style
+            include ../styles/main_global.css
+        link(rel='stylesheet', href='styles/main_global.css', media='all')
+
+mixin loop_while(counter)
+    -i=0;
+    while i < counter
+        -i++;
+        block
+      
+      
+mixin top_info()
+  .top_info
+    .fl
+      .dm.fz_24.i-pin.clr_main
+      .dm
+        span Ваш город:
+      .dm
+        .city_block.select_box_v1
+          select.select2
+            option(selected) Ростов-на-Дону
+            option() Харьков
+            option() Москва
+            option() Киев
+    .fr
+      .dm
+        a.btn_v1.callback_btn.openCallbackPopup.action_btn(href='#') заказать звонок
+      .dm
+        a.callback_link(href='tel:+78632070555') +7 (863) 20 70 555
+      | &nbsp; &nbsp;
+      .dm
+        a.callback_link(href='tel:+78632070222') +7 (863) 20 70 222
+
+mixin main_menu(footer, active)
+  ul.main_menu
+    li.menu_item
+      a.menu_link(class= (active === 1 ? '_active' : '') href='zalog.html')
+        -if (active === 1)
+          span.active_corner_l
+          span.active_corner_r
+        span.link_text Залог авто
+    li.menu_item
+      a.menu_link(class= (active === 2 ? '_active' : '') href='#')
+        -if (active === 2)
+          span.active_corner_l
+          span.active_corner_r
+        span.link_text срочный выкуп
+    li.menu_item
+      a.menu_link(class= (active === 3 ? '_active' : '') href='#')
+        -if (active === 3)
+          span.active_corner_l
+          span.active_corner_r
+        - if (footer)
+          span.link_text автострахование
+        - else
+          span.link_text страхование
+    li.menu_item
+      a.menu_link(class= (active === 4 ? '_active' : '') href='#')
+        -if (active === 4)
+          span.active_corner_l
+          span.active_corner_r
+        span.link_text продажа авто
+    li.menu_item
+      a.menu_link(class= (active === 5 ? '_active' : '') href='podbor.html')
+        -if (active === 5)
+          span.active_corner_l
+          span.active_corner_r
+        span.link_text подбор авто
+    li.menu_item
+      a.menu_link(class= (active === 6 ? '_active' : '') href='#')
+        -if (active === 6)
+          span.active_corner_l
+          span.active_corner_r
+        span.link_text контакты
+        
+mixin main_menu_holder(footer, active)
+  .logo_block
+    .logo_block_corner
+    a.logo(href='index.html')
+      img(src='i/logo_ksk_auto.png')
+  
+  +main_menu(footer, active)
+        
+mixin service_slider(skip)
+  .service_slider.serviceSlider
+    .slide
+      .service_box
+        .service_img
+          img(src='i/service_pledge.png')
+        .service_caption Залог авто
+        p до 7% в месяц<br>без переплат и посредников
+
+        .text_center
+          a.btn_v1.service_btn.action_btn(href='#') узнать подробнее
+
+    .slide
+      .service_box
+        .service_img
+          img(src='i/service_ransom.png')
+        .service_caption Срочный выкуп
+        p Выкупаем автомобили<br>дорого и быстро
+
+        .text_center
+          a.btn_v1.service_btn.action_btn(href='#') узнать подробнее
+
+    .slide
+      .service_box
+        .service_img
+          img(src='i/service_insurance.png')
+        .service_caption Автострахование
+        p На самых выгодных условиях<br>КАСКО и ОСАГО
+
+        .text_center
+          a.btn_v1.service_btn.action_btn(href='#') узнать подробнее
+          
+    .slide
+      .service_box
+        .service_img
+          img(src='i/service_sale.png')
+        .service_caption Продажа авто
+        p Автомобили с пробегом<br>под любые цели
+        
+        .text_center
+          a.btn_v1.service_btn.action_btn(href='#') узнать подробнее
+          
+    .slide
+      .service_box
+        .service_img
+          img(src='i/service_chose.png')
+        .service_caption Подбор авто
+        p Профессиональный подбор<br>в кратчайшие сроки
+
+        .text_center
+          a.btn_v1.service_btn.action_btn(href='#') узнать подробнее
+
+    a.slide_prev.service_control(href='#')
+    a.slide_next.service_control(href='#')
+    
+mixin footer(active)
+  .footer
+    .section_inner.clearfix
+      +main_menu_holder(true, active)
+        
+mixin scripts()
+    script(src='js/jquery1.10.js')
+    script(src='js/jquery-confirm.min.js')
+    script(src='js/select2.js')
+    script(src='js/slick.min.js')
+    script(src='js/script.js')
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyCl7THpWflv0u70jhfuU4T6KbuNy0fuxME&callback=loadMap')

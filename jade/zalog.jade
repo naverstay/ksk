@@ -1,0 +1,187 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+  +dev_head('KSK залог')
+
+  body.zalog_page
+    .wrapper
+      .base
+        div.header
+          .section_inner.clearfix
+            +top_info()
+              
+            +main_menu_holder(false, 1)
+            
+        div.main_content
+          .main_slide_holder
+            .main_slide_img
+              img(src='i/pledge_main.jpg')
+              .main_slide_info_holder._tall: .section_inner
+                .hero_block
+                  .hero_caption.clr_main Возьмите деньги 
+                    span под авто<br>легко и быстро!
+                    
+                  .hero_tip До 7% в месяц без переплат и посредников
+                  .hero_text
+                    p От 5 000 до 5 000 000 рублей<br>Срок от 1 дня до 2 лет<br>Выдаем наличные за час<br>Авто под круглосуточной охраной<br>Справки и поручители не требуются
+                    
+                    a.btn_v2.action_btn_2.chose_btn(href='#')
+                      span подобрать авто
+                      
+          .borrowing_section
+            .section_inner
+              .edged_title._mod_1
+                span как оформить займ под автомобиль<br>всего за 3 шага?
+                
+              ul.borrowing_steps
+                li
+                  .borrowing_block
+                    .step_img
+                      img(src='i/step_1.jpg')
+                    .step_info
+                      .step_index 1
+                      .step_caption Решили заложить авто?
+                      p Разместите заявку на сайте или позвоните нам и сообщите о том, что Вам нужны деньги.
+
+                li
+                  .borrowing_block
+                    .step_img
+                      img(src='i/step_2.jpg')
+                    .step_info
+                      .step_index 2
+                      .step_caption Приезжайте в офис
+                      p Приезжайте в офис, наши специалисты помогут Вам с оформлением необходимых документов.
+
+                li
+                  .borrowing_block
+                    .step_img
+                      img(src='i/step_3.jpg')
+                    .step_info
+                      .step_index._small 3
+                      .step_caption Получите деньги
+                      p Мы рассматриваем заявки в течение часа. Затем Вы получаете наличные деньги. Все просто!
+
+          .order_section
+            .section_inner
+              .order_title Одобрим заявку за один день!
+              .order_tip.clr_main с любой кредитной историей
+              
+              .order_form_holder._no_dots
+                form(action='#')
+                  .f_row
+                    .f_cell
+                      .input_w
+                        input.f_input_v1(placeholder='Ваше имя')
+                    .f_cell
+                      .input_w
+                        input.f_input_v1(placeholder='Телефон')
+                    .f_cell
+                      .input_w
+                        button.btn_v2.action_btn_2.order_btn
+                          span отправить заявку
+                          
+          .zalog_section
+            .section_inner
+              .partner_block
+                .partner_caption Что нужно,<br> 
+                .partner_tip чтобы получить займ под авто?
+
+                .pledge_caption ДЛЯ ОФОРМЛЕНИЯ
+                p Вам необходимо иметь при себе в момент обращения:
+                ul
+                  li Паспорт гражданина РФ
+                  li Свидетельство о регистрации транспортного средства (СТС)
+                  li Паспорт технического средства (ПТС)
+
+                .pledge_caption ПОСЛЕ ОФОРМЛЕНИЯ
+                p Мы бесплатно оформим все документы согласно действующему законодательству:
+
+                ul
+                  li Договор залога, предусмотренный законодательством;
+                  li Залоговый билет, с указанием всех данных автомобиля ;
+                  li Акт приема-передачи с указанием пробега, а также имеющихся/отсутствующих повреждений.
+                  
+          .reputation_section
+            .section_inner
+              .reputation_title Отличная репутация
+              .reputation_tip залог нашего успеха!
+              .reputation_block
+                ul.reputation_list
+                  li.rep_1
+                    .reputation_item
+                      .reputation_name Надежно
+                      p Рассматриваем любую<br>кредитную историю
+                  li.rep_2
+                    .reputation_item
+                      .reputation_name Безопасно
+                      p Договор займа<br>на основании ФЗ -131РФ
+                  li.rep_3
+                    .reputation_item
+                      .reputation_name Быстро
+                      p Решение о выдаче займа<br>за один час
+                      
+                  li.rep_4
+                    .reputation_item
+                      .reputation_name Просто
+                      p Не нужно лишних справок<br>и подтверждения дохода
+                  li.rep_5
+                    .reputation_item
+                      .reputation_name Удобно
+                      p Возможность погашения<br>займа пол авто досрочно
+                  li.rep_6
+                    .reputation_item
+                      .reputation_name Выгодно
+                      p От 5 000 до 5 000 000 рублей<br>без страховок и переплат
+                
+              .text_center
+                a.btn_v2.action_btn_2.reputation_btn(href='#')
+                  span оформить заявку на займ
+                      
+          .borrowing_section
+            .section_inner
+              .edged_title
+                span другие наши услуги
+                
+              +service_slider()
+              
+      .map_holder
+        #ksk_map.map_block
+        .section_inner
+          .map_info
+            .map_info_caption Наши контакты
+            .map_info_city в Ростове-на-Дону
+            .map_info_phone +7 (863) 20 70 555
+            .map_info_phone +7 (863) 20 70 222
+            p Ежедневно с 9:00 до 21:00
+            .map_info_callback 
+              a.btn_v1.service_btn.action_btn.openCallbackPopup(href='#') заказать звонок
+            p г. Ростов-на-Дону, ул Орбитальная 3 И
+            
+      +footer()
+      
+      .hide
+        #callback_popup
+          .popup_head
+            img(src='i/zalog_popup_bg.jpg')
+            a.popup_logo._left(href='#')
+              .popup_logo_corner_l
+              .popup_logo_corner_r
+              img(src='i/logo_ksk_auto.png')
+          .popup_body
+            .popup_title Оставьте заявку на расчет<br>по программе «Залог Авто»
+            
+            .popup_cell
+              .input_w
+                input.f_input_v2(placeholder='Ваше имя')
+            .popup_cell
+              .input_w
+                input.f_input_v2(placeholder='E-mail')
+            .popup_cell
+              .input_w
+                input.f_input_v2(placeholder='Телефон')
+            .popup_cell
+              .input_w
+                textarea.f_input_v2(placeholder='Напишите Ваш вопрос или комментарий здесь')
+                
+    +scripts()
+    

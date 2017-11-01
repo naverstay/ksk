@@ -1,0 +1,130 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+  +dev_head('KSK подбор')
+
+  body.podbor_page
+    .wrapper
+      .base
+        div.header
+          .section_inner.clearfix
+            +top_info()
+              
+            +main_menu_holder(false, 5)
+            
+        div.main_content
+          .main_slide_holder
+            .main_slide_img
+              img(src='i/main_podbor.jpg')
+              .main_slide_info_holder._tall: .section_inner
+                .hero_block
+                  .hero_caption.clr_main Профессиональный<br>
+                    span подбор автомобиля
+                    
+                  .hero_tip Подбор в кратчайшие сроки и удобное время
+                  .hero_text
+                    p Выездной специалист по подбору;<br>Собственный автосервис;<br>Помощь при оформлении сделки;<br>Сопровождение сделки под ключ;<br>Помощь при оформлении в ГАИ.
+                    
+                    a.btn_v2.action_btn_2.chose_btn(href='#')
+                      span подобрать авто
+                      
+          .borrowing_section
+            .section_inner
+              .edged_title._mod_1
+                span как подобрать и купить автомобиль<br>быстро и с гарантией?
+                
+              ul.borrowing_steps._mod_1
+                li
+                  .borrowing_block
+                    .step_img
+                      img(src='i/podbor_step_1.jpg')
+                    .step_info
+                      .step_index 1
+                      .step_caption Оставьте заявку на<br>подбор автомобиля
+                      p У нас есть надежные программы индивидуального страхования каско, ОСАГО и «Зеленая карта».
+                    
+                li
+                  .borrowing_block
+                    .step_img
+                      img(src='i/podbor_step_2.jpg')
+                    .step_info
+                      .step_index 2
+                      .step_caption Профессиональный подбор за 7 дней
+                      p Страхуйте как объект недвижимости в целом, так и отдельные части – например, отделку, авторский
+                    
+                li
+                  .borrowing_block
+                    .step_img
+                      img(src='i/podbor_step_3.jpg')
+                    .step_info
+                      .step_index._small 3
+                      .step_caption Оформление сделки
+                      p Страхование грузов и перевозок, жизни и здоровья, путешествий и даже домашних животных.
+                    
+          .order_section._mod_1
+            .section_inner
+              .order_title Ответим на все вопросы
+              .order_tip.clr_main подберем наилучший автомобиль по вашим требованиям
+              
+              .order_form_holder._no_dots
+                form(action='#')
+                  .f_row
+                    .f_cell
+                      .input_w
+                        input.f_input_v1(placeholder='Ваше имя')
+                    .f_cell
+                      .input_w
+                        input.f_input_v1(placeholder='Телефон')
+                    .f_cell
+                      .input_w
+                        button.btn_v2.action_btn_2.order_btn
+                          span отправить заявку
+                
+          .borrowing_section
+            .section_inner
+              .edged_title
+                span другие наши услуги
+                
+              +service_slider()
+              
+      .map_holder
+        #ksk_map.map_block
+        .section_inner
+          .map_info
+            .map_info_caption Наши контакты
+            .map_info_city в Ростове-на-Дону
+            .map_info_phone +7 (863) 20 70 555
+            .map_info_phone +7 (863) 20 70 222
+            p Ежедневно с 9:00 до 21:00
+            .map_info_callback 
+              a.btn_v1.service_btn.action_btn.openCallbackPopup(href='#') заказать звонок
+            p г. Ростов-на-Дону, ул Орбитальная 3 И
+            
+      +footer()
+      
+      .hide
+        #callback_popup
+          .popup_head
+            img(src='i/home_popup_bg.jpg')
+            a.popup_logo(href='#')
+              .popup_logo_corner_l
+              .popup_logo_corner_r
+              img(src='i/logo_ksk_auto.png')
+          .popup_body
+            .popup_title Оставьте заявку на расчет<br>по программе «Залог Авто»
+            
+            .popup_cell
+              .input_w
+                input.f_input_v2(placeholder='Ваше имя')
+            .popup_cell
+              .input_w
+                input.f_input_v2(placeholder='E-mail')
+            .popup_cell
+              .input_w
+                input.f_input_v2(placeholder='Телефон')
+            .popup_cell
+              .input_w
+                textarea.f_input_v2(placeholder='Напишите Ваш вопрос или комментарий здесь')
+                
+    +scripts()
+    

@@ -1,0 +1,187 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+  +dev_head('KSK главная')
+
+  body.home_page
+    .wrapper
+      .base
+        div.header
+          .section_inner.clearfix
+            +top_info()
+              
+            +main_menu_holder()
+            
+        div.main_content
+          .main_slide_holder
+            .main_slide_img
+              img(src='i/main_slide.jpg')
+              .main_slide_money
+                img(src='i/slide_money.png')
+              .main_slide_info_holder: .section_inner
+                .main_slide_info
+                  .main_slide_info_corner
+                  span.money_limit_text.fz_24 выдаем<br>до
+                  span.money_limit_val.fz_100 5&thinsp;000&thinsp;000
+                  span.money_limit_tip
+                    span.fz_40 рублей<br>
+                    span.fz_20 за твой<br>автомобиль
+                    
+          .section_inner
+            .section_caption
+              span Выдаем деньги под залог авто<br>
+              span.clr_main  без справок и поручителей 
+              span  в Ростове-на-дону
+              
+            ul.features_list
+              li
+                .feature_block
+                  .feature_icon
+                    img(src='svg/option_1.svg')
+                  .feature_caption Всегда на связи
+                  p Отвечаем на звонки круглосуточно, в любой день, даже утром первого января.
+          
+              li
+                .feature_block
+                  .feature_icon
+                    img(src='svg/option_2.svg')
+                  .feature_caption Одобряем быстро
+                  p В наших офисах работает более 50 сотрудников готовых оказать помощь.
+          
+              li
+                .feature_block
+                  .feature_icon
+                    img(src='svg/option_3.svg')
+                  .feature_caption Помогаем сразу
+                  p 95% проблем решаются при первом обращении по телефону или визите в офис.
+          
+          .borrowing_section
+            .section_inner
+              .edged_title
+                span Как проходит процедура заема?
+                
+              ul.borrowing_steps
+                li
+                  .borrowing_block
+                    .step_img
+                      img(src='i/step_1.jpg')
+                    .step_info
+                      .step_index 1
+                      .step_caption Решили заложить авто?
+                      p Разместите заявку на сайте или позвоните нам и сообщите о том, что Вам нужны деньги.
+                    
+                li
+                  .borrowing_block
+                    .step_img
+                      img(src='i/step_2.jpg')
+                    .step_info
+                      .step_index 2
+                      .step_caption Приезжайте в офис
+                      p Приезжайте в офис, наши специалисты помогут Вам с оформлением необходимых документов.
+                    
+                li
+                  .borrowing_block
+                    .step_img
+                      img(src='i/step_3.jpg')
+                    .step_info
+                      .step_index._small 3
+                      .step_caption Получите деньги
+                      p Мы рассматриваем заявки в течение часа. Затем Вы получаете наличные деньги. Все просто!
+                    
+          .order_section
+            .section_inner
+              .order_title Одобрим заявку за один день!
+              .order_tip.clr_main с любой кредитной историей
+              
+              .order_form_holder
+                form(action='#')
+                  .f_row
+                    .f_cell
+                      .input_w
+                        input.f_input_v1(placeholder='Ваше имя')
+                    .f_cell
+                      .input_w
+                        input.f_input_v1(placeholder='Телефон')
+                    .f_cell
+                      .input_w
+                        button.btn_v2.action_btn_2.order_btn
+                          span отправить заявку
+
+              ul.experience_list
+                li
+                  .experience_block
+                    span.experience_counter.clr_main 5021
+                    span.experience_label &nbsp;человек
+                    p Получил финансовую помощь<br>в сложной ситуации.
+                    
+                li
+                  .experience_block
+                    span.experience_label  более&nbsp;
+                    span.experience_counter.clr_main 10
+                    span.experience_label &nbsp;лет опыта
+                    p Финансовой поддержки<br>за плечами нашей компании
+                    
+                li
+                  .experience_block
+                    span.experience_counter.clr_main 1
+                    span.experience_label &nbsp;час
+                    p Занимает процедура займа<br>после подачи заявки
+                      
+          .partner_section
+            .section_inner
+              .partner_block
+                .partner_caption КСК-авто<br>надежный партнер
+                p Наша сеть автоломбардов ориентирована на деловых, активных людей, которые ценят качество оказываемых услуг и исполнения обязательств.
+                p У нас уже 7 офисов в 3 областях РФ.
+                p Открывая каждый новый Автоломбард мы очень серьезно подходим к выбору места и оформлению дизайна наших офисов, где будут предоставляться наши услуги.
+                p Клиенты обращают внимание на скорость обслуживания, продолжительность процедур и умение менеджеров выстраивать общение и находить решения. Огромное внимание компания уделяет комфорту, современности сервиса, бонусам, конфиденциальному обращению, своей репутации.
+                      
+                
+          .borrowing_section
+            .section_inner
+              .edged_title
+                span другие наши услуги
+                
+              +service_slider()
+                
+      .map_holder
+        #ksk_map.map_block
+        .section_inner
+          .map_info
+            .map_info_caption Наши контакты
+            .map_info_city в Ростове-на-Дону
+            .map_info_phone +7 (863) 20 70 555
+            .map_info_phone +7 (863) 20 70 222
+            p Ежедневно с 9:00 до 21:00
+            .map_info_callback 
+              a.btn_v1.service_btn.action_btn.openCallbackPopup(href='#') заказать звонок
+            p г. Ростов-на-Дону, ул Орбитальная 3 И
+            
+      +footer()
+      
+      .hide
+        #callback_popup
+          .popup_head
+            img(src='i/home_popup_bg.jpg')
+            a.popup_logo(href='#')
+              .popup_logo_corner_l
+              .popup_logo_corner_r
+              img(src='i/logo_ksk_auto.png')
+          .popup_body
+            .popup_title Оставьте заявку на расчет<br>по программе «Залог Авто»
+            
+            .popup_cell
+              .input_w
+                input.f_input_v2(placeholder='Ваше имя')
+            .popup_cell
+              .input_w
+                input.f_input_v2(placeholder='E-mail')
+            .popup_cell
+              .input_w
+                input.f_input_v2(placeholder='Телефон')
+            .popup_cell
+              .input_w
+                textarea.f_input_v2(placeholder='Напишите Ваш вопрос или комментарий здесь')
+                
+    +scripts()
+    
