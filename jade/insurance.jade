@@ -1,70 +1,71 @@
 include mixins.pug
 doctype html
 html(lang='ru')
-  +dev_head('KSK подбор')
+  +dev_head('KSK страхование')
 
-  body.podbor_page
+  body.insurance_page
     .wrapper
       .base
         div.header
           .section_inner.clearfix
             +top_info()
               
-            +main_menu_holder(false, 5)
+            +main_menu_holder(false, 3)
             
         div.main_content
           .main_slide_holder
             .main_slide_img
-              img(src='i/main_podbor.jpg')
+              img(src='i/main_insurance.jpg')
               .main_slide_info_holder._tall: .section_inner
                 .hero_block
-                  .hero_caption.clr_main Профессиональный<br>
-                    span подбор автомобиля
+                  .hero_caption.clr_main Все виды страхования<br>
+                    span под любые нужды!
                     
-                  .hero_tip Подбор в кратчайшие сроки и удобное время
+                  .hero_tip Надежная защита от финансовых потерь.
+
                   .hero_text
-                    p Выездной специалист по подбору;<br>Собственный автосервис;<br>Помощь при оформлении сделки;<br>Сопровождение сделки под ключ;<br>Помощь при оформлении в ГАИ.
-                    
+                    p Автострахование;<br>Жизнь и здоровье;<br>Путешествия;<br>Страхование грузов и перевозок;<br>Страхование имущества.
+
                     a.btn_v2.action_btn_2.chose_btn.openCallbackPopup(href='#')
-                      span подбор авто
+                      span оформить заявку
                       
           .borrowing_section
             .section_inner
               .edged_title._mod_1
-                span как подобрать и купить автомобиль<br>быстро и с гарантией?
+                span какие виды страхования<br>предоставляет компания КСК-Авто?
                 
-              ul.borrowing_steps._mod_1
+              ul.borrowing_steps
                 li
                   .borrowing_block
                     .step_img
-                      img(src='i/podbor_step_1.jpg')
+                      img(src='i/step_insurance_1.jpg')
                     .step_info
                       .step_index 1
-                      .step_caption Оставьте заявку на<br>подбор автомобиля
+                      .step_caption Автострахование
                       p У нас есть надежные программы индивидуального страхования каско, ОСАГО и «Зеленая карта».
-                    
+
                 li
                   .borrowing_block
                     .step_img
-                      img(src='i/podbor_step_2.jpg')
+                      img(src='i/step_insurance_2.jpg')
                     .step_info
                       .step_index 2
-                      .step_caption Профессиональный подбор за 7 дней
-                      p Страхуйте как объект недвижимости в целом, так и отдельные части – например, отделку, авторский
-                    
+                      .step_caption Имущество
+                      p Страхуйте как объект недвижимости в целом,<br>так и отдельные части – например, отделку, авторский дизайн, антиквариат и т.д.
+
                 li
                   .borrowing_block
                     .step_img
-                      img(src='i/podbor_step_3.jpg')
+                      img(src='i/step_insurance_3.jpg')
                     .step_info
                       .step_index._small 3
-                      .step_caption Оформление сделки
+                      .step_caption Иные виды страхования
                       p Страхование грузов и перевозок, жизни и здоровья, путешествий и даже домашних животных.
-                    
-          .order_section._mod_1
+
+          .order_section._mod_3
             .section_inner
               .order_title Ответим на все вопросы
-              .order_tip.clr_main подберем наилучший автомобиль по вашим требованиям
+              .order_tip.clr_main проинформируем по стоимости страхования
               
               .order_form_holder._no_dots
                 form.sendOrder(action='#')
@@ -79,7 +80,30 @@ html(lang='ru')
                       .input_w
                         button.btn_v2.action_btn_2.order_btn
                           span отправить заявку
-                
+                          
+          .zalog_section
+            .section_inner.clearfix
+              .insurance_block
+                .partner_caption Только лучшие
+                .partner_tip надежные и проверенные партнеры
+
+              ul.insurance_list
+                li
+                  .insurance_partner
+                    img(src='i/partners_1.png')
+                li
+                  .insurance_partner
+                    img(src='i/partners_2.png')
+                li
+                  .insurance_partner
+                    img(src='i/partners_3.png')
+                li
+                  .insurance_partner
+                    img(src='i/partners_4.png')
+                li
+                  .insurance_partner
+                    img(src='i/partners_5.png')
+                    
           .borrowing_section
             .section_inner
               .edged_title
@@ -105,13 +129,13 @@ html(lang='ru')
       .hide
         #callback_popup
           .popup_head
-            img(src='i/podbor_popup_bg.jpg')
+            img(src='i/insurance_popup_bg.jpg')
             a.popup_logo._left(href='#')
               .popup_logo_corner_l
               .popup_logo_corner_r
               img(src='i/logo_ksk_auto.png')
           form.popup_body.popupForm
-            .popup_title быстрый и профессиональный<br>подбор автомобиля
+            .popup_title Оставьте заявку на страхование<br>самого важного
             
             .popup_cell
               .input_w

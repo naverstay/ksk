@@ -14,6 +14,15 @@ var all_pins = [],
   body_var,
   serviceSlider;
 
+function docScrollTo(pos, speed, callback) {
+
+  $('html,body').animate({'scrollTop': pos}, speed, function () {
+    if (typeof(callback) == 'function') {
+      callback();
+    }
+  });
+}
+
 function loadMap() {
 
   // без таймаута не работает :(
@@ -108,7 +117,24 @@ function callbackDialog() {
         btnClass: 'btn_v2 action_btn_2 order_btn',
         text: '<span class="btn_text">отправить заявку</span>',
         action: function () {
-          console.log('order callback here');
+
+          var form_data = $('.popupForm').serialize(); //собераем все данные из формы
+
+          console.log(form_data);
+
+          $.ajax({
+            type: "POST", //Метод отправки
+            url: "order.php", //путь до php фаила отправителя
+            data: form_data,
+            success: function () {
+              //код в этом блоке выполняется при успешной отправке сообщения
+              $.alert({
+                columnClass: 'callback_alert',
+                type: 'green',
+                title: "Ваше сообщение отправлено!"
+              });
+            }
+          });
         }
       }
     }
@@ -214,8 +240,37 @@ $(function ($) {
 
   initServiceSlider();
 
-  body_var.delegate('.openCallbackPopup', 'click', function () {
+  body_var.delegate('.sendOrder', 'submit', function (e) {
+    e.preventDefault();
+
+    var form_data = $(this).serialize(); //собераем все данные из формы
+
+    console.log(form_data);
+
+    $.ajax({
+      type: "POST", //Метод отправки
+      url: "mailer.php", //путь до php фаила отправителя
+      data: form_data,
+      success: function () {
+        //код в этом блоке выполняется при успешной отправке сообщения
+        $.alert({
+          columnClass: 'callback_alert',
+          type: 'green',
+          title: "Ваше сообщение отправлено!"
+        });
+      }
+    });
+
+  }).delegate('.openCallbackPopup', 'click', function () {
     callbackDialog();
+
+    return false;
+  }).delegate('.scrollTo', 'click', function () {
+    var target = $($(this).attr('href'));
+
+    if (target.length) {
+      docScrollTo(target.offset().top, 600);
+    }
 
     return false;
   });

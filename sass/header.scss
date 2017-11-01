@@ -153,6 +153,7 @@
     color: $default_t_color;
 
     &._active {
+      cursor: default;
       color: #fff;
 
       &:before {

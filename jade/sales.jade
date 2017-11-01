@@ -1,0 +1,151 @@
+include mixins.pug
+doctype html
+html(lang='ru')
+  +dev_head('KSK продажа')
+
+  body.sales_page
+    .wrapper
+      .base
+        div.header
+          .section_inner.clearfix
+            +top_info()
+              
+            +main_menu_holder(false, 4)
+            
+        div.main_content
+          .main_slide_holder
+            .main_slide_img
+              img(src='i/main_sales.jpg')
+              .main_slide_info_holder._tall: .section_inner
+                .hero_block
+                  .hero_caption.clr_main Продажа автомобилей<br>
+                    span с пробегом
+
+                  .hero_text
+                    p Без переплат и посредников<br>Индивидуальный подбор авто<br>Предоставление автокредита<br>Выдаем наличные за 1 час<br>Возможность перегона в область<br>Страхование ОСАГО, КАСКО
+                      
+          .borrowing_section
+            .section_inner
+              .reputation_title Какие автомобили с пробегом
+              .reputation_tip есть сейчас в продаже?
+                  
+              ul.sales_list
+                +loop_while(6)
+                  li
+                    .sale_item
+                      .sale_img
+                        img(src='i/auto_1.jpg')
+                      .sale_name LADA Granta, 2014
+                      dl.sale_features
+                        dt Стоимость: 
+                        dd 
+                          span.clr_main 240 000 P
+                          
+                        dt В кредит:
+                        dd 3 383 P
+                        
+                        dt Двигатель:
+                        dd 1.6 МТ
+                        
+                        dt Год выпуска: 
+                        dd 2014
+                        
+                      dl.sale_features
+                        dt Пробег: 
+                        dd 34 000 км
+                          
+                        dt Хозяев: 
+                        dd 2
+                        
+                        dt Состояние: 
+                        dd Хорошее
+                      .sale_controls
+                        .sale_photo
+                          a.btn_v3.action_btn_2.photo_btn(href='#')
+                        .sale_order
+                          a.btn_v3.action_btn.order_btn.openCallbackPopup(href='#') забронировать сейчас
+                            
+          .reputation_section
+            .section_inner
+              .reputation_title Отличная репутация
+              .reputation_tip залог нашего успеха!
+              .reputation_block._mod_sales
+                ul.reputation_list
+                  li.rep_1
+                    .reputation_item
+                      .reputation_name Выгодно
+                      p Даем до 90%<br>от рыночной стоимости
+                  li.rep_2
+                    .reputation_item
+                      .reputation_name Удобно
+                      p Выкупаем автомобили<br>в любом состоянии
+                  li.rep_3
+                    .reputation_item
+                      .reputation_name Надежно
+                      p Получение денег<br>после подписания договора
+                      
+                  li.rep_4
+                    .reputation_item
+                      .reputation_name Быстро
+                      p Решение о выкупе<br>за 7 минут
+                  li.rep_5
+                    .reputation_item
+                      .reputation_name Универсально
+                      p Выкупаем легковые,<br>грузовые авто и спецтехнику
+                  li.rep_6
+                    .reputation_item
+                      .reputation_name Просто
+                      p Рассматриваем кредитные<br>и ломбардные автомобили
+                
+              .text_center
+                a.btn_v2.action_btn_2.reputation_btn.openCallbackPopup(href='#')
+                  span оформить заявку на выкуп
+                      
+          .borrowing_section
+            .section_inner
+              .edged_title
+                span другие наши услуги
+                
+              +service_slider()
+              
+      .map_holder
+        #ksk_map.map_block
+        .section_inner
+          .map_info
+            .map_info_caption Наши контакты
+            .map_info_city в Ростове-на-Дону
+            .map_info_phone +7 (863) 20 70 555
+            .map_info_phone +7 (863) 20 70 222
+            p Ежедневно с 9:00 до 21:00
+            .map_info_callback 
+              a.btn_v1.service_btn.action_btn.openCallbackPopup(href='#') заказать звонок
+            p г. Ростов-на-Дону, ул Орбитальная 3 И
+            
+      +footer()
+      
+      .hide
+        #callback_popup
+          .popup_head
+            img(src='i/sell_popup_bg.jpg')
+            a.popup_logo._left(href='#')
+              .popup_logo_corner_l
+              .popup_logo_corner_r
+              img(src='i/logo_ksk_auto.png')
+          form.popup_body.popupForm
+            .popup_title Оставьте заявку  на бронь<br>автомобиля с пробегом
+            
+            .popup_cell
+              .input_w
+                input.f_input_v2(placeholder='Ваше имя' name='name')
+            .popup_cell
+              .input_w
+                input.f_input_v2(placeholder='E-mail' name='email')
+            .popup_cell
+              .input_w
+                input.f_input_v2(placeholder='Телефон' name='phone')
+            .popup_cell
+              .input_w
+                textarea.f_input_v2(placeholder='Напишите Ваш вопрос или комментарий здесь' name='msg')
+                
+    +scripts()
+    

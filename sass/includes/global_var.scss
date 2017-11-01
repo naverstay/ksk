@@ -43,6 +43,12 @@ $placeholder_color: #202837;
 $gl_red: #d2393c;
 $gl_turquoise: #00b0d3;
 $gl_blue: #1646a0;
+$gl_green_dark: #336633;
+$gl_green_light: #339933;
+$gl_violet_dark: #5c2d84;
+$gl_violet_light: #6f5379;
+$gl_orange_dark: #f57e20;
+$gl_orange_light: #ffa200;
 
 @mixin opacity($val : 1, $important : 0) {
   @if $important == 0 {

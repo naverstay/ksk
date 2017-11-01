@@ -1,37 +1,36 @@
 include mixins.pug
 doctype html
 html(lang='ru')
-  +dev_head('KSK залог')
+  +dev_head('KSK выкуп')
 
-  body.zalog_page
+  body.vikup_page
     .wrapper
       .base
         div.header
           .section_inner.clearfix
             +top_info()
               
-            +main_menu_holder(false, 1)
+            +main_menu_holder(false, 2)
             
         div.main_content
           .main_slide_holder
             .main_slide_img
-              img(src='i/pledge_main.jpg')
+              img(src='i/main_vikup.jpg')
               .main_slide_info_holder._tall: .section_inner
                 .hero_block
-                  .hero_caption.clr_main Возьмите деньги 
-                    span под авто<br>легко и быстро!
-                    
-                  .hero_tip До 7% в месяц без переплат и посредников
+                  .hero_caption.clr_main Срочный выкуп<br>
+                    span авто быстро и дорого!
+
                   .hero_text
-                    p От 5 000 до 5 000 000 рублей<br>Срок от 1 дня до 2 лет<br>Выдаем наличные за час<br>Авто под круглосуточной охраной<br>Справки и поручители не требуются
+                    p Даем до 90% цены от рынка<br>Решение за 7 минут<br>Грузовые, легковые, спецтехника<br>Кредитные и ломбардные авто<br>Любое состояние<br>Деньги после подписания договора
                     
                     a.btn_v2.action_btn_2.chose_btn.openCallbackPopup(href='#')
-                      span Оформить заявку
+                      span оформить заявку
                       
           .borrowing_section
             .section_inner
               .edged_title._mod_1
-                span как оформить займ под автомобиль<br>всего за 3 шага?
+                span как оформить срочный выкуп авто<br>всего за 3 шага?
                 
               ul.borrowing_steps
                 li
@@ -40,8 +39,8 @@ html(lang='ru')
                       img(src='i/step_1.jpg')
                     .step_info
                       .step_index 1
-                      .step_caption Решили заложить авто?
-                      p Разместите заявку на сайте или позвоните нам и сообщите о том, что Вам нужны деньги.
+                      .step_caption Решили продать авто?
+                      p Разместите заявку на сайтеили позвоните нам и сообщитео том, что Вам нужны деньги.
 
                 li
                   .borrowing_block
@@ -50,7 +49,7 @@ html(lang='ru')
                     .step_info
                       .step_index 2
                       .step_caption Приезжайте в офис
-                      p Приезжайте в офис, наши специалисты помогут Вам с оформлением необходимых документов.
+                      p Приезжайте в офис, наши специалисты помогут Вамс оформлением необходимых документов.
 
                 li
                   .borrowing_block
@@ -59,9 +58,9 @@ html(lang='ru')
                     .step_info
                       .step_index._small 3
                       .step_caption Получите деньги
-                      p Мы рассматриваем заявки в течение часа. Затем Вы получаете наличные деньги. Все просто!
+                      p Мы рассматриваем заявкив течение часа.Затем Вы получаете наличные деньги. Все просто!
 
-          .order_section
+          .order_section._mod_2
             .section_inner
               .order_title Одобрим заявку за один день!
               .order_tip.clr_main с любой кредитной историей
@@ -84,7 +83,7 @@ html(lang='ru')
             .section_inner.clearfix
               .partner_block
                 .partner_caption Что нужно,<br> 
-                .partner_tip чтобы получить займ под авто?
+                .partner_tip для срочной продажи автомобиля?
 
                 .pledge_caption ДЛЯ ОФОРМЛЕНИЯ
                 p Вам необходимо иметь при себе в момент обращения:
@@ -101,43 +100,43 @@ html(lang='ru')
                   li Залоговый билет, с указанием всех данных автомобиля ;
                   li Акт приема-передачи с указанием пробега, а также имеющихся/отсутствующих повреждений.
               .need_block
-                img(src='i/need_to_know.png')
+                img(src='i/need_to_pledge.png')
                   
           .reputation_section
             .section_inner
               .reputation_title Отличная репутация
               .reputation_tip залог нашего успеха!
-              .reputation_block
+              .reputation_block._mod_pledge
                 ul.reputation_list
                   li.rep_1
                     .reputation_item
-                      .reputation_name Надежно
-                      p Рассматриваем любую<br>кредитную историю
+                      .reputation_name Выгодно
+                      p Даем до 90%<br>от рыночной стоимости
                   li.rep_2
                     .reputation_item
-                      .reputation_name Безопасно
-                      p Договор займа<br>на основании ФЗ -131РФ
+                      .reputation_name Удобно
+                      p Выкупаем автомобили<br>в любом состоянии
                   li.rep_3
                     .reputation_item
-                      .reputation_name Быстро
-                      p Решение о выдаче займа<br>за один час
+                      .reputation_name Надежно
+                      p Получение денег<br>после подписания договора
                       
                   li.rep_4
                     .reputation_item
-                      .reputation_name Просто
-                      p Не нужно лишних справок<br>и подтверждения дохода
+                      .reputation_name Быстро
+                      p Решение о выкупе<br>за 7 минут
                   li.rep_5
                     .reputation_item
-                      .reputation_name Удобно
-                      p Возможность погашения<br>займа пол авто досрочно
+                      .reputation_name Универсально
+                      p Выкупаем легковые,<br>грузовые авто и спецтехнику
                   li.rep_6
                     .reputation_item
-                      .reputation_name Выгодно
-                      p От 5 000 до 5 000 000 рублей<br>без страховок и переплат
+                      .reputation_name Просто
+                      p Рассматриваем кредитные<br>и ломбардные автомобили
                 
               .text_center
                 a.btn_v2.action_btn_2.reputation_btn.openCallbackPopup(href='#')
-                  span оформить заявку на займ
+                  span оформить заявку на выкуп
                       
           .borrowing_section
             .section_inner
@@ -164,7 +163,7 @@ html(lang='ru')
       .hide
         #callback_popup
           .popup_head
-            img(src='i/zalog_popup_bg.jpg')
+            img(src='i/vikup_popup_bg.jpg')
             a.popup_logo._left(href='#')
               .popup_logo_corner_l
               .popup_logo_corner_r

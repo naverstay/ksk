@@ -43,19 +43,19 @@ mixin top_info()
 mixin main_menu(footer, active)
   ul.main_menu
     li.menu_item
-      a.menu_link(class= (active === 1 ? '_active' : '') href='zalog.html')
+      +menu_link((active === 1 ? '_active' : ''), ref='zalog.html')
         -if (active === 1)
           span.active_corner_l
           span.active_corner_r
         span.link_text Залог авто
     li.menu_item
-      a.menu_link(class= (active === 2 ? '_active' : '') href='#')
+      +menu_link((active === 2 ? '_active' : ''), ref='vikup.html')
         -if (active === 2)
           span.active_corner_l
           span.active_corner_r
         span.link_text срочный выкуп
     li.menu_item
-      a.menu_link(class= (active === 3 ? '_active' : '') href='#')
+      +menu_link((active === 3 ? '_active' : ''), ref='insurance.html')
         -if (active === 3)
           span.active_corner_l
           span.active_corner_r
@@ -64,24 +64,32 @@ mixin main_menu(footer, active)
         - else
           span.link_text страхование
     li.menu_item
-      a.menu_link(class= (active === 4 ? '_active' : '') href='#')
+      +menu_link((active === 4 ? '_active' : ''), ref='sales.html')
         -if (active === 4)
           span.active_corner_l
           span.active_corner_r
         span.link_text продажа авто
     li.menu_item
-      a.menu_link(class= (active === 5 ? '_active' : '') href='podbor.html')
+      +menu_link((active === 5 ? '_active' : ''), ref='podbor.html')
         -if (active === 5)
           span.active_corner_l
           span.active_corner_r
         span.link_text подбор авто
     li.menu_item
-      a.menu_link(class= (active === 6 ? '_active' : '') href='#')
+      a.menu_link.scrollTo(href='#ksk_map')
         -if (active === 6)
           span.active_corner_l
           span.active_corner_r
         span.link_text контакты
         
+mixin menu_link(cls, ref)
+  - if (cls && cls.length)
+      span.menu_link(class= cls)
+        block
+  - else
+      a.menu_link(href= ref)
+        block
+    
 mixin main_menu_holder(footer, active)
   .logo_block
     .logo_block_corner
@@ -100,7 +108,7 @@ mixin service_slider(skip)
         p до 7% в месяц<br>без переплат и посредников
 
         .text_center
-          a.btn_v1.service_btn.action_btn(href='#') узнать подробнее
+          a.btn_v1.service_btn.action_btn(href='zalog') узнать подробнее
 
     .slide
       .service_box
@@ -110,7 +118,7 @@ mixin service_slider(skip)
         p Выкупаем автомобили<br>дорого и быстро
 
         .text_center
-          a.btn_v1.service_btn.action_btn(href='#') узнать подробнее
+          a.btn_v1.service_btn.action_btn(href='vikup.html') узнать подробнее
 
     .slide
       .service_box
@@ -120,7 +128,7 @@ mixin service_slider(skip)
         p На самых выгодных условиях<br>КАСКО и ОСАГО
 
         .text_center
-          a.btn_v1.service_btn.action_btn(href='#') узнать подробнее
+          a.btn_v1.service_btn.action_btn(href='insurance.html') узнать подробнее
           
     .slide
       .service_box
@@ -130,7 +138,7 @@ mixin service_slider(skip)
         p Автомобили с пробегом<br>под любые цели
         
         .text_center
-          a.btn_v1.service_btn.action_btn(href='#') узнать подробнее
+          a.btn_v1.service_btn.action_btn(href='sales.html') узнать подробнее
           
     .slide
       .service_box
@@ -140,7 +148,7 @@ mixin service_slider(skip)
         p Профессиональный подбор<br>в кратчайшие сроки
 
         .text_center
-          a.btn_v1.service_btn.action_btn(href='#') узнать подробнее
+          a.btn_v1.service_btn.action_btn(href='podbor.html') узнать подробнее
 
     a.slide_prev.service_control(href='#')
     a.slide_next.service_control(href='#')

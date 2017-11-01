@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: 'ksk_icons';
-  src:  url('#{$icomoon-font-path}/ksk_icons.eot?oc0gdy');
-  src:  url('#{$icomoon-font-path}/ksk_icons.eot?oc0gdy#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/ksk_icons.ttf?oc0gdy') format('truetype'),
-    url('#{$icomoon-font-path}/ksk_icons.woff?oc0gdy') format('woff'),
-    url('#{$icomoon-font-path}/ksk_icons.svg?oc0gdy#ksk_icons') format('svg');
+  src:  url('#{$icomoon-font-path}/ksk_icons.eot?bcn3cm');
+  src:  url('#{$icomoon-font-path}/ksk_icons.eot?bcn3cm#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/ksk_icons.ttf?bcn3cm') format('truetype'),
+    url('#{$icomoon-font-path}/ksk_icons.woff?bcn3cm') format('woff'),
+    url('#{$icomoon-font-path}/ksk_icons.svg?bcn3cm#ksk_icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,6 +26,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.i-camera {
+  &:before {
+    content: $i-camera;
+  }
+}
 .i-arrow_r {
   &:before {
     content: $i-arrow_r;

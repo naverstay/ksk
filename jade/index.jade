@@ -94,14 +94,14 @@ html(lang='ru')
               .order_tip.clr_main с любой кредитной историей
               
               .order_form_holder
-                form(action='#')
+                form.sendOrder(action='#')
                   .f_row
                     .f_cell
                       .input_w
-                        input.f_input_v1(placeholder='Ваше имя')
+                        input.f_input_v1(placeholder='Ваше имя' name='name')
                     .f_cell
                       .input_w
-                        input.f_input_v1(placeholder='Телефон')
+                        input.f_input_v1(placeholder='Телефон' name='phone')
                     .f_cell
                       .input_w
                         button.btn_v2.action_btn_2.order_btn
@@ -128,14 +128,15 @@ html(lang='ru')
                     p Занимает процедура займа<br>после подачи заявки
                       
           .partner_section
-            .section_inner
+            .section_inner.clearfix
               .partner_block
                 .partner_caption КСК-авто<br>надежный партнер
                 p Наша сеть автоломбардов ориентирована на деловых, активных людей, которые ценят качество оказываемых услуг и исполнения обязательств.
                 p У нас уже 7 офисов в 3 областях РФ.
                 p Открывая каждый новый Автоломбард мы очень серьезно подходим к выбору места и оформлению дизайна наших офисов, где будут предоставляться наши услуги.
                 p Клиенты обращают внимание на скорость обслуживания, продолжительность процедур и умение менеджеров выстраивать общение и находить решения. Огромное внимание компания уделяет комфорту, современности сервиса, бонусам, конфиденциальному обращению, своей репутации.
-                      
+              .partner_car
+                img(src='i/partner_car.png')
                 
           .borrowing_section
             .section_inner
@@ -167,21 +168,21 @@ html(lang='ru')
               .popup_logo_corner_l
               .popup_logo_corner_r
               img(src='i/logo_ksk_auto.png')
-          .popup_body
+          form.popup_body.popupForm
             .popup_title Оставьте заявку на расчет<br>по программе «Залог Авто»
             
             .popup_cell
               .input_w
-                input.f_input_v2(placeholder='Ваше имя')
+                input.f_input_v2(placeholder='Ваше имя' name='name')
             .popup_cell
               .input_w
-                input.f_input_v2(placeholder='E-mail')
+                input.f_input_v2(placeholder='E-mail' name='email')
             .popup_cell
               .input_w
-                input.f_input_v2(placeholder='Телефон')
+                input.f_input_v2(placeholder='Телефон' name='phone')
             .popup_cell
               .input_w
-                textarea.f_input_v2(placeholder='Напишите Ваш вопрос или комментарий здесь')
+                textarea.f_input_v2(placeholder='Напишите Ваш вопрос или комментарий здесь' name='msg')
                 
     +scripts()
     

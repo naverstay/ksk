@@ -286,6 +286,14 @@ body {
   &._mod_1 {
     margin-bottom: 30px;
   }
+
+  &._mod_2 {
+    background-image: url(../i/application_bg.jpg);
+  }
+
+  &._mod_3 {
+    background-image: url(../i/question_insurance.jpg);
+  }
 }
 
 .order_title {
@@ -380,12 +388,12 @@ body {
 }
 
 .partner_section {
-  background: url(../i/ksk_partner.jpg) no-repeat 50% 25%;
+  background: url(../i/section_bg.jpg) no-repeat 50% 0;
   padding: 60px 0 55px;
 }
 
 .zalog_section {
-  background: url(../i/zalog_bg.jpg) no-repeat 50% 0;
+  background: url(../i/section_bg.jpg) no-repeat 50% 0;
   padding: 60px 0 10px;
 }
 
@@ -408,8 +416,20 @@ body {
   font: 30px $MyriadProRegular;
 }
 
+.partner_car {
+  float: right;
+  margin: -80px -110px;
+
+  img {
+    display: block;
+  }
+}
+
 .partner_block {
+  position: relative;
+  z-index: 1;
   width: 470px;
+  float: left;
 
   p {
     font: 21px $PFDinDisplayProLight;
@@ -438,6 +458,33 @@ body {
         background: $default_t_color;
       }
     }
+  }
+}
+
+.insurance_block {
+  text-align: center;
+}
+
+.insurance_list {
+  text-align: center;
+  padding-bottom: 35px;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    min-width: 28%;
+    margin-bottom: 30px;
+  }
+}
+
+.insurance_partner {
+  padding-top: 10px;
+  line-height: 85px;
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
   }
 }
 
@@ -558,6 +605,18 @@ body {
     margin: -365px 0 0 -800px;
     background: url(../i/reputation.jpg) no-repeat 50% 50%;
   }
+
+  &._mod_pledge {
+    &:before {
+      background-image: url(../i/reputation_pledge.jpg);
+    }
+  }
+
+  &._mod_sales {
+    &:before {
+      background-image: url(../i/reputation_sales.jpg);
+    }
+  }
 }
 
 .reputation_list {
@@ -572,7 +631,7 @@ body {
     &.rep_1 {
       top: 38px;
       left: 100px;
-      width: 200px;
+      width: 210px;
     }
 
     &.rep_2 {
@@ -584,7 +643,7 @@ body {
     &.rep_3 {
       top: 315px;
       left: 100px;
-      width: 220px;
+      width: 245px;
     }
 
     &.rep_4 {
@@ -598,7 +657,7 @@ body {
       text-align: right;
       top: 178px;
       right: -5px;
-      width: 220px;
+      width: 260px;
     }
 
     &.rep_6 {
@@ -636,6 +695,81 @@ body {
   font: 30px $MyriadProRegular;
   margin-bottom: 15px;
   letter-spacing: -.025em;
+}
+
+.need_block {
+  float: right;
+  margin: 15px -5px;
+
+  img {
+    display: block;
+  }
+}
+
+.sales_list {
+  @extend %clearfix;
+  margin: 0 -1% -25px -30px;
+  padding-top: 30px;
+
+  > li {
+    padding-left: 30px;
+    float: left;
+    width: 33%;
+    margin-bottom: 40px;
+  }
+}
+
+.sale_img {
+  margin-bottom: 25px;
+
+  img {
+    display: block;
+  }
+}
+
+.sale_name {
+  margin-bottom: 12px;
+  font: 30px $MyriadProBold;
+  letter-spacing: -.025em;
+}
+
+.sale_features {
+  float: left;
+  width: 45%;
+  margin-bottom: 20px;
+
+  + .sale_features {
+    margin-left: 10%;
+  }
+
+  dt, dd {
+    float: left;
+    font-size: 18px;
+    margin-bottom: 6px;
+    letter-spacing: -.02em;
+  }
+
+  dd {
+    padding-left: 5px;
+  }
+
+  dt {
+    clear: both;
+  }
+}
+
+.sale_controls {
+  @extend %clearfix;
+  clear: both;
+  padding-bottom: 20px;
+}
+
+.sale_order {
+  margin-left: 80px;
+}
+
+.sale_photo {
+  float: left;
 }
 
 // **********  text
